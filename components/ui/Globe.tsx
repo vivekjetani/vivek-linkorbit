@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+
 const GLOBE_CONFIG: COBEOptions = {
   width: 1080,
   height: 1080,
