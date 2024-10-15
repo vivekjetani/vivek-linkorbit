@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Image from "next/image";
 import OrbitingCircles from "@/components/ui/orbiting-circles";
 import Globe from "@/components/ui/Globe";
+import  FlickeringGrid  from "@/components/ui/flickering-grid";
 // Import the CSS file for hover effect
 
 export default function Home() {
@@ -43,6 +44,16 @@ export default function Home() {
       {/* Main Content */}
       <div className="flex-grow flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-white md:shadow-xl p-4 pt-20 pb-20 relative"> 
         {/* Globe as a background */}
+
+        <FlickeringGrid
+        className="z-0 absolute inset-0 size-full"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.4}
+        flickerChance={0.1}
+      />
+
         <Globe 
           className={`absolute inset-0 w-full h-full object-cover z-0 ${isMobile ? '-translate-y-20' : 'translate-y-1/4'}`} // Move globe much higher on mobile
         />
