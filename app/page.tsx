@@ -26,20 +26,25 @@ export default function Home() {
       {/* GDG PPSU Header */}
       <div className="fixed top-0 left-0 p-4 bg-[#f1f3f4] shadow-lg w-full flex items-center z-10">
         {/* Logo and Text Section */}
-        <div className="flex items-center space-x-2">
+        <a
+          href="/Vivek-Jetani-Resume-final.pdf"
+          download="Vivek Jetani Resume.pdf"
+          className="flex items-center space-x-2 cursor-pointer"
+        >
           <div className="img w-10 h-10 rounded-full overflow-hidden border-2 border-[#4285f4] hover:scale-150 transition-transform duration-300">
             <Image src="/profile.jpg" alt="GDSC Logo" width={50} height={50} />
           </div>
           <div className="text">
             <p className={`text-lg font-semibold text-[#4285f4] ${isMobile ? 'text-sm' : ''}`}>
-              Vivek Jetani - GDG Organizer
+              Vivek Jetani - GDGc Organizer
             </p>
             <p className={`text-sm text-[#5f6368] ${isMobile ? 'text-xs' : ''}`}>
               Computer Science Engineering Student 
             </p>
           </div>
-        </div>
+        </a>
       </div>
+
 
       {/* Main Content */}
       <div className="flex-grow flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-white md:shadow-xl p-4 pt-20 pb-20 relative"> 
