@@ -91,6 +91,7 @@ export default function Home() {
           className="size-[40px] border-none bg-transparent z-20"
           radius={outerRadius} // Use dynamic radius
           duration={20}
+          delay={0}
           reverse
         >
           <a href="https://www.linkedin.com/in/jet-vivek-jetani/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
@@ -102,11 +103,23 @@ export default function Home() {
           className="size-[55px] border-none bg-transparent z-20"
           radius={outerRadius} // Use dynamic radius
           duration={20}
-          delay={20}
+          delay={6.66}
           reverse
         >
           <a href={`mailto:jetanivivek321@gmail.com`} title="Email" target="_blank" rel="noopener noreferrer">
             <Image src="/Gmail-icon.png" alt="Email Icon" width={50} height={50} />
+          </a>
+        </OrbitingCircles>
+
+        <OrbitingCircles
+        className="size-[50px] border-none bg-transparent z-20"
+        radius={outerRadius}
+        duration={20}
+        delay={13.33}
+        reverse
+        >
+          <a href="https://github.com/vivekjetani" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Icon" width={50} height={50} />
           </a>
         </OrbitingCircles>
       </div>
