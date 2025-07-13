@@ -4,6 +4,7 @@ import Image from "next/image";
 import OrbitingCircles from "@/components/ui/orbiting-circles";
 import Globe from "@/components/ui/Globe";
 import  FlickeringGrid  from "@/components/ui/flickering-grid";
+import toast, { Toaster } from 'react-hot-toast';
 // Import the CSS file for hover effect
 
 export default function Home() {
@@ -16,6 +17,15 @@ export default function Home() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleDownload = () => {
+    toast.success("Downloading Vivek Jetani's Resume...");
+    // This triggers the actual download
+    const link = document.createElement('a');
+    link.href = '/Vivek-Jetani-Resume-final.pdf';
+    link.download = 'Vivek_Jetani_Resume.pdf';
+    link.click();
+  };
+
   // Set the radius based on mobile view, increasing the mobile size by 50% again
   const innerRadius = isMobile ? 90 : 80; // Adjusted for mobile
   const outerRadius = isMobile ? 150 : 190; // Adjusted for mobile
@@ -23,12 +33,26 @@ export default function Home() {
   return (
     <div className="relative flex flex-col min-h-screen bg-[#f1f3f4] text-[#000000]">
 
+      <Toaster
+      position="top-right"
+      toastOptions={{
+        style: {
+          background: '#fff',
+          color: '#333',
+          fontWeight: '500',
+          fontSize: '14px',
+          border: '1px solid #ccc',
+          padding: '10px 14px',
+          zIndex: 9999,
+        },
+      }}
+    />
+
       {/* GDG PPSU Header */}
       <div className="fixed top-0 left-0 p-4 bg-[#f1f3f4] shadow-lg w-full flex items-center z-10">
         {/* Logo and Text Section */}
-        <a
-          href="/Vivek-Jetani-Resume-final.pdf"
-          download="Vivek Jetani Resume.pdf"
+        <button
+          onClick={handleDownload}
           className="flex items-center space-x-2 cursor-pointer"
         >
           <div className="img w-10 h-10 rounded-full overflow-hidden border-2 border-[#4285f4] hover:scale-150 transition-transform duration-300">
@@ -42,7 +66,7 @@ export default function Home() {
               Computer Science Engineering Student 
             </p>
           </div>
-        </a>
+        </button>
       </div>
 
 
