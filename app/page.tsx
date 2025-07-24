@@ -21,7 +21,7 @@ export default function Home() {
     toast.success("Downloading Vivek Jetani's Resume...");
     // This triggers the actual download
     const link = document.createElement('a');
-    link.href = '/Vivek-Jetani-Resume-final.pdf';
+    link.href = '/Vivek-Jetani-Resume.pdf';
     link.download = 'Vivek_Jetani_Resume.pdf';
     link.click();
   };
